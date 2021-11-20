@@ -29,9 +29,9 @@
 ## 使用方法：
 
 * **编译进固件：**
-> 将源代码src目录放入固件源代码/package/目录下，选上Utilities ---> changewmac。
+> 将此仓库克隆到固件源代码/package/目录下，选上Utilities ---> changewmac。
 * **直接在固件中使用：**
-> 将源代码/src/目录下的文件夹放到固件的/etc/目录下，去掉/etc/crontabs/root代码中的注释#，如下所示。
+> 将源代码/src/目录下的文件夹放到固件的根目录下，去掉/etc/crontabs/root代码中的注释#，如下所示。
 ```diff
 - # */10 * * * * chmod +x /etc/storage/mac/changewmac.sh && /etc/storage/mac/changewmac.sh
 + */10 * * * * chmod +x /etc/storage/mac/changewmac.sh && /etc/storage/mac/changewmac.sh
