@@ -30,10 +30,9 @@ define Build/Compile
 endef
 
 define Package/$(PKG_NAME)/install
-	$(INSTALL_DIR) $(1)/etc/storage/mac
-	$(INSTALL_DIR) $(1)/etc/crontabs
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/etc/crontabs/root $(1)/etc/crontabs/root
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/etc/storage/mac/changewmac.sh $(1)/etc/storage/mac/changewmac.sh
+	mkdir -p $(1)/etc/crontabs $(1)/etc/storage/mac
+	echo "# */30 * * * * /etc/storage/mac/changewmac.sh -t" >> $(1)/etc/crontabs/root
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/changewmac.sh $(1)/etc/storage/mac/changewmac.sh
 endef
 
 $(eval $(call BuildPackage,$(PKG_NAME)))

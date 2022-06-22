@@ -1,1 +1,0 @@
-# */10 * * * * chmod +x /etc/storage/mac/changewmac.sh && /etc/storage/mac/changewmac.sh
