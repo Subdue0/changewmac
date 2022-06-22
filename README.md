@@ -33,14 +33,14 @@
 * **直接在固件中使用：**
 > 将源代码/src/目录下的文件夹放到固件的根目录下，去掉/etc/crontabs/root代码中的注释#，如下所示。
 ```diff
-- # */10 * * * * chmod +x /etc/storage/mac/changewmac.sh && /etc/storage/mac/changewmac.sh
-+ */10 * * * * chmod +x /etc/storage/mac/changewmac.sh && /etc/storage/mac/changewmac.sh
+- # */30 * * * * /etc/storage/mac/changewmac.sh
++ */30 * * * * /etc/storage/mac/changewmac.sh
 ```
 
 ## 编译固件时去除factory写保护：
 
 1. 确定要编译的路由器的型号，搜索dts，进入文件夹，去掉对应型号的dts中factory分区的read-only，保存退出。
-2. 选上Utilities ---> Other modules ---> kmod-mtd-rw。
+2. 选上Utilities ---> Other modules ---> kmod-mtd-rw（选中插件时会自动勾选上此依赖）。
 
 
 
