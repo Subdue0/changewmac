@@ -31,7 +31,7 @@
 * **编译进固件：**
 > 将此仓库克隆到固件源代码/package/目录下，选上Utilities ---> changewmac。
 * **直接在固件中使用：**
-> 将源代码/src/目录下的文件夹放到固件的根目录下，去掉/etc/crontabs/root代码中的注释#，如下所示。
+> 去掉计划任务中（/etc/crontabs/root）的注释#，如下所示。
 ```diff
 - # */30 * * * * /etc/storage/mac/changewmac.sh
 + */30 * * * * /etc/storage/mac/changewmac.sh
